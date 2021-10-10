@@ -62,7 +62,6 @@ def api_request():
             "count":1
         }
         
-   
         response = requests.get(url,params=params)
         if response.status_code == 200:
             pprint(response.json()) # pprint prints a dict in termainal in a readable way.
