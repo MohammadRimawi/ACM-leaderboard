@@ -1,0 +1,5 @@
+jsql
+mysql-connector-python
+pprintpp
+requests
+jinja2
