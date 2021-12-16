@@ -6,6 +6,9 @@ from jsql import sql
 from pprint import pprint
 from sqlalchemy import create_engine
 
+from codeforces_apis import *
+
+
 DATABASE_NAME = "Alsaqifa" #os.getenv("DATABASE_NAME")
 DATABASE_PASSWORD = "00000000" #os.getenv("DATABASE_PASSWORD")
 DATABASE_USER = "root" #os.getenv("DATABASE_USER")
@@ -72,4 +75,5 @@ def api_request():
 
 if __name__ == '__main__':
     # database_query()
-    api_request()
+    # api_request()
+    Contest.rating_changes(45)
