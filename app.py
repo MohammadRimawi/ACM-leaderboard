@@ -6,7 +6,7 @@ from jsql import sql
 from pprint import pprint
 from sqlalchemy import create_engine
 
-from codeforces_apis import *
+import codeforces_api
 
 
 DATABASE_NAME = "Alsaqifa" #os.getenv("DATABASE_NAME")
@@ -76,4 +76,8 @@ def api_request():
 if __name__ == '__main__':
     # database_query()
     # api_request()
-    Contest.rating_changes(45)
+    # cf_api = codeforces_api.CodeforcesApi(api_key, secret) # Authorized access to api.
+    anonim_cf_api = codeforces_api.CodeforcesApi() # Unauthorized access to api.
+    rate = anonim_cf_api.user_info(["zakii"])
+    parser = codeforces_api.CodeforcesParser() # Create parser.
+    pprint(rate[0].to_dict())
